@@ -181,13 +181,13 @@ Câu C1:
             <!-- 3. Khu vực sản phẩm (5 ảnh): Dùng figure để chứa ảnh minh họa -->
 
 <figure>
-            <img src="img1.jpg" alt="Mặt trước iPhone 16">
+            <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MCFQ4_AV2?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=YWhETjZQckMwdXJjSkNUSEFXdFRsbFZya2lKWlJmUEwrYndWOTJiVWJWQUYwVmtIbGRkS25RMVpBRlo0bk5DUVBuK0pzejZDSTlLWThyRVNxNm1oWVE" alt="Mặt trước iPhone 16">
                 <!-- Có thể dùng div hoặc span bọc các ảnh nhỏ phụ -->
             <div class="thumbnails">
-                <img src="img2.jpg" alt="Mặt bên">
-                <img src="img3.jpg" alt="Mặt sau">
-                <img src="img4.jpg" alt="Cổng sạc">
-                <img src="img5.jpg" alt="Vỏ hộp">
+                <img src="https://cdnv2.tgdd.vn/mwg-static/common/News/1569700/iPhone%2016%20TCBC%201.jpg" alt="Mặt bên">
+                <img src="https://shopdunk.com/images/uploaded/iPhone%2016/iphone-16-pro-va-pro-max-mau-vang-sa-mac.jpg" alt="Mặt sau">
+                <img src="https://happyphone.vn/wp-content/uploads/2024/05/Cong-sac-Type-C-tren-iPhone-16-va-iPhone-16-Plus.jpg" alt="Cổng sạc">
+                <img src="https://cdn2.fptshop.com.vn/unsafe/800x0/Iphone_16_2_c7710010e3.jpg" alt="Vỏ hộp">
             </div>
 </figure>
 
