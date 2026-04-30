@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh sách sản phẩm</title>
+  </head>
+  <body>
+    <header>
+      <h1>Cửa Hàng Công Nghệ</h1>
+      <nav>
+        <ul>
+          <li><a href="profile.html">Trang chủ</a></li>
+          <li><a href="#featured">Sản phẩm nổi bật</a></li>
+          <li><a href="#comparison">So sánh</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Mục Sản phẩm nổi bật -->
+      <section id="featured">
+        <h2>Sản phẩm nổi bật</h2>
+
+        <!-- Sản phẩm 1 -->
+        <article>
+          <figure>
+            <img
+              src="https://nguyencongpc.vn/media/product/20740-acer-gaming-nitro-5-an515-45-r0b6-1.JPG"
+              alt="Sản phẩm 1"
+              width="300"
+            />
+            <figcaption>Laptop Gaming Nitro</figcaption>
+          </figure>
+          <h3>Laptop Gaming Pro</h3>
+          <p>Cấu hình cực mạnh cho game thủ chuyên nghiệp.</p>
+          <p>Giá: <strong>25.000.000đ</strong></p>
+          <a href="#">Mua ngay</a>
+        </article>
+
+        <br />
+
+        <!-- Sản phẩm 2 -->
+        <article>
+          <figure>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a7/IPhone_15_pro_max.jpg"
+              alt="Sản phẩm 2"
+              width="300"
+            />
+            <figcaption>Smartphone Apple</figcaption>
+          </figure>
+          <h3>IPhone 15 Pro Max</h3>
+          <p>Camera sắc nét, hiệu năng đỉnh cao từ Apple.</p>
+          <p>Giá: <strong>32.000.000đ</strong></p>
+          <a href="#">Mua ngay</a>
+        </article>
+
+        <br />
+
+        <!-- Sản phẩm 3 -->
+        <article>
+          <figure>
+            <img
+              src="https://cdn.tgdd.vn//News/1411767//40-730x408.jpg"
+              alt="Sản phẩm 3"
+              width="300"
+            />
+            <figcaption>Tai nghe không dây</figcaption>
+          </figure>
+          <h3>Tai nghe chống ồn</h3>
+          <p>Âm thanh trung thực,độ trễ thấp, thời lượng pin 40 giờ.</p>
+          <p>Giá: <strong>5.500.000đ</strong></p>
+          <a href="#">Mua ngay</a>
+        </article>
+
+        <br />
+
+        <!-- Sản phẩm 4 -->
+        <article>
+          <figure>
+            <img
+              src="https://cdn-i2.congthuong.vn/stores/news_dataimages/quynhnga/092020/17/20/2645_dong-ho-deo-tay-thong-minh-Huawei.png?rt=20200917202645"
+              alt="Sản phẩm 4"
+              width="300"
+            />
+            <figcaption>Đồng hồ điện tử</figcaption>
+          </figure>
+          <h3>Đồng hồ thông minh</h3>
+          <p>Theo dõi sức khỏe và luyện tập 24/7.</p>
+          <p>Giá: <strong>10.000.000đ</strong></p>
+          <a href="#">Mua ngay</a>
+        </article>
+      </section>
+
+      <hr />
+
+      <!-- Mục Bảng so sánh -->
+      <section id="comparison">
+        <h2>Bảng so sánh sản phẩm</h2>
+        <!-- Sử dụng thuộc tính border của thẻ table để kẻ bảng mà không cần CSS -->
+        <table border="1" cellpadding="10" cellspacing="0" width="100%">
+          <thead>
+            <tr bgcolor="#f2f2f2">
+              <th>Tiêu chí</th>
+              <th>Sản phẩm 1</th>
+              <th>Sản phẩm 2</th>
+              <th>Sản phẩm 4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Giá bán sản phẩm</td>
+              <td>25.000.000đ</td>
+              <td>32.000.000đ</td>
+              <td>10.000.000đ</td>
+            </tr>
+            <tr>
+              <td>Màn hình</td>
+              <td>15.6 inch</td>
+              <td>6.8 inch</td>
+              <td>1.3 inch</td>
+            </tr>
+            <tr>
+              <td>Dung lượng Pin</td>
+              <td>6200 mAh</td>
+              <td>4500 mAh</td>
+              <td>500 mAh</td>
+            </tr>
+            <tr>
+              <!-- Sử dụng rowspan ít nhất 1 lần theo yêu cầu -->
+              <td rowspan="2">Hệ điều hành & Hỗ trợ</td>
+              <td>iOS 26</td>
+              <td>Android 14</td>
+              <td>Android 14</td>
+            </tr>
+            <tr>
+              <!-- Cột đầu tiên bị rowspan ở trên chiếm chỗ -->
+              <td>5 năm cập nhật</td>
+              <td>4 năm cập nhật</td>
+              <td>4 năm cập nhật</td>
+            </tr>
+            <tr>
+              <td>Kháng nước</td>
+              <td>IP68</td>
+              <td>IP68</td>
+              <td>IP67</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <!-- Sử dụng colspan ít nhất 1 lần theo yêu cầu -->
+              <td colspan="4" align="center">
+                <i>* Lưu ý: Giá có thể thay đổi tùy theo thời điểm.</i>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+    </main>
+
+    <br />
+
+    <footer>
+      <nav>
+        <a href="#">Chính sách bảo mật</a> | <a href="#">Liên hệ hỗ trợ</a> |
+        <a href="#">Hỏi đáp thường gặp</a>
+      </nav>
+      <p>&copy; 2026 Bản quyền thuộc về Cửa hàng Ecommerce.</p>
+    </footer>
+  </body>
+</html>
