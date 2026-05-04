@@ -89,7 +89,7 @@ Câu A4:
 
 3.
 
--Công dụng:
+- Công dụng:
 
     + Hình ảnh nội dung mô tả cho công cụ tìm kiếm (SEO)
 
