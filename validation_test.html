@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kiểm tra xác thực HTML5</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 300px;
+        margin: 20px;
+      }
+      label {
+        font-weight: bold;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#">
+      <div>
+        <label>TH 1 (Required):</label><br />
+        <input type="text" required value="" />
+      </div>
+
+      <div>
+        <label>TH 2 (Email):</label><br />
+        <input type="email" value="abc" />
+      </div>
+
+      <div>
+        <label>TH 3 (Number Max):</label><br />
+        <input type="number" min="1" max="10" value="15" />
+      </div>
+
+      <div>
+        <label>TH 4 (Pattern):</label><br />
+        <input type="text" pattern="[0-9]{10}" value="abc123" />
+      </div>
+
+      <div>
+        <label>TH 5 (Minlength):</label><br />
+        <input type="password" minlength="8" value="123" />
+      </div>
+
+      <button type="submit">Gửi</button>
+    </form>
+  </body>
+</html>
