@@ -91,31 +91,31 @@ BÀI B3:
 
 - Gỡ lỗi HTML:
 
-  -Lỗi 1: Dòng 4 thẻ <title> chưa đóng -><title></title>
+  -Lỗi 1: Dòng 4 thẻ < title> chưa đóng ->< title></>
 
-  -Lỗi 2: Dòng 8 thẻ <h1> đóng sai -> <h1></h1>
+  -Lỗi 2: Dòng 8 thẻ < h1> đóng sai -> < h1></ h1>
 
-  -Lối 3: Dòng 12 đóng bằng <a> là sai -> </a>
+  -Lối 3: Dòng 12 đóng bằng < a> là sai -> < /a>
 
-  -Lỗi 4: Dòng 22 sai thứ tự thẻ <p><b>..</p></b> -> <p><b>...</b></p>
+  -Lỗi 4: Dòng 22 sai thứ tự thẻ < p>< b>..</ p></ b> -> < p>< b>...</ b></ p>
 
-  -Lỗi 5: Dòng 45 thẻ <p> chưa đóng -> </p>
+  -Lỗi 5: Dòng 45 thẻ < p> chưa đóng -> </ p>
 
   -Lỗi 6: Dòng 20 thiếu dấu ngoặc kếp của iphone.jpg -> "iphone.ipg"
 
-  -Lỗi 7: Dòng 2 thiếu thuộc tính lang -> <html lang = "vi>
+  -Lỗi 7: Dòng 2 thiếu thuộc tính lang -> < html lang = "vi>
 
-  -Lỗi 8: Dòng 40 và 42 trong 1 thẻ HTML chỉ có 1 main nên sửa thành <aside>...</aside>
+  -Lỗi 8: Dòng 40 và 42 trong 1 thẻ HTML chỉ có 1 main nên sửa thành < aside>...</ aside>
 
-  -Lỗi 9: Dòng 20 thẻ img thiếu thuộc tính alt -> <img src="iphone.jpg" alt="iPhone 16 Pro">
+  -Lỗi 9: Dòng 20 thẻ img thiếu thuộc tính alt -> < img src="iphone.jpg" alt="iPhone 16 Pro">
 
-  -Lỗi 10: Sau dòng 5 chưa có thẻ <meta name...> -> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  -Lỗi 10: Sau dòng 5 chưa có thẻ < meta name...> -> < meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   -Lỗi 11: Dòng 4 và 5 bị đảo thứ tự đổi lại cho nhau
 
   -Lỗi 12: Dòng 9 và 10 bị lộn thứ tự đảo lại cho nhau
 
-  -Lỗi 13: Dòng 1 — <!DOCTYPE> sai cú pháp -> <!DOCTYPE html>
+  -Lỗi 13: Dòng 1 — <!DOCTYPE> sai cú pháp -> <! DOCTYPE html>
 
 BÀI B4:
 
