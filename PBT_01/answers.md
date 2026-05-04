@@ -55,12 +55,9 @@ Câu A3:
 
     Hộp 1
 
-
     Text A Text B
 
-
     Hộp 2
-
 
     Text C Text D
 
@@ -90,40 +87,38 @@ Phân biệt các thẻ:
 
     - Tốc độ chậm: Mất nhiều thời gian để tính toán và hiển thị hơn.
 
-Bài B3- Gỡ lỗi HTML
--Lỗi 1: Dòng 4 thẻ <title> chưa đóng -><title></title>
+BÀI B3:
 
-    -Lỗi 2: Dòng 8 thẻ <h1> đóng sai -> <h1></h1>
+- Gỡ lỗi HTML:
 
+  -Lỗi 1: Dòng 4 thẻ <title> chưa đóng -><title></title>
 
-    -Lối 2: Dòng 12 đóng bằng <a> là sai -> </a>
+  -Lỗi 2: Dòng 8 thẻ <h1> đóng sai -> <h1></h1>
 
+  -Lối 3: Dòng 12 đóng bằng <a> là sai -> </a>
 
-    -Lỗi 3: Dòng 22 sai thứ tự thẻ <p><b>..</p></b> -> <p><b>...</b></p>
+  -Lỗi 4: Dòng 22 sai thứ tự thẻ <p><b>..</p></b> -> <p><b>...</b></p>
 
-    -Lỗi 4: Dòng 45 thẻ <p> chưa đóng -> </p>
+  -Lỗi 5: Dòng 45 thẻ <p> chưa đóng -> </p>
 
-    -Lỗi 5: Dòng 20 thiếu dấu ngoặc kếp của iphone.jpg -> "iphone.ipg"
+  -Lỗi 6: Dòng 20 thiếu dấu ngoặc kếp của iphone.jpg -> "iphone.ipg"
 
+  -Lỗi 7: Dòng 2 thiếu thuộc tính lang -> <html lang = "vi>
 
-    -Lỗi 6: Dòng 2 thiếu thuộc tính lang -> <html lang = "vi>
+  -Lỗi 8: Dòng 40 và 42 trong 1 thẻ HTML chỉ có 1 main nên sửa thành <aside>...</aside>
 
+  -Lỗi 9: Dòng 20 thẻ img thiếu thuộc tính alt -> <img src="iphone.jpg" alt="iPhone 16 Pro">
 
-    -Lỗi 7: Dòng 40 và 42 trong 1 thẻ HTML chỉ có 1 main nên sửa thành <aside>...</aside>
+  -Lỗi 10: Sau dòng 5 chưa có thẻ <meta name...> -> <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  -Lỗi 11: Dòng 4 và 5 bị đảo thứ tự đổi lại cho nhau
 
-    -Lỗi 8: Dòng 20 thẻ img thiếu thuộc tính alt -> <img src="iphone.jpg" alt="iPhone 16 Pro">
+  -Lỗi 12: Dòng 9 và 10 bị lộn thứ tự đảo lại cho nhau
 
+  -Lỗi 13: Dòng 1 — <!DOCTYPE> sai cú pháp -> <!DOCTYPE html>
 
-    -Lỗi 9: Sau dòng 5 chưa có thẻ <meta name...> -> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+BÀI B4:
 
-
-    -Lỗi 10: Dòng 4 và 5 bị đảo thứ tự đổi lại cho nhau
-
-
-    -Lỗi 11: Dòng 9 và 10 bị lộn thứ tự đảo lại cho nhau
-
-Bài B4:
 1:
 
     -Thẻ <header> nằm trên dầu trang web chứa các logo,tiêu đề
@@ -139,111 +134,150 @@ Bài B4:
 ![Ảnh element](./section.jpg)
 
 Câu C1:
+
 ```html
 <!DOCTYPE html>
-
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Chi tiết sản phẩm</title>
-</head>
-<body>
-
-<!-- 1. Tiêu đề + Điều hướng: Dùng header để bao bọc phần đầu trang -->
-<header>
-        <h1>ShopTLU</h1> <!-- Tiêu đề chính của trang web -->
-        <nav> <!-- nav vì đây là khu vực chứa các liên kết điều hướng chính -->
-            <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Sản phẩm</a></li>
-            </ul>
-        </nav>
+  </head>
+  <body>
+    <!-- 1. Tiêu đề + Điều hướng: Dùng header để bao bọc phần đầu trang -->
+    <header>
+      <h1>ShopTLU</h1>
+      <!-- Tiêu đề chính của trang web -->
+      <nav>
+        <!-- nav vì đây là khu vực chứa các liên kết điều hướng chính -->
+        <ul>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Sản phẩm</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- 2. Breadcrumb: Dùng nav với aria-label để chỉ định đây là thanh điều hướng vị trí -->
 
-<nav aria-label="breadcrumb">
-    <ol> <!-- ol vì breadcrumb là danh sách có thứ tự/cấp bậc -->
+    <nav aria-label="breadcrumb">
+      <ol>
+        <!-- ol vì breadcrumb là danh sách có thứ tự/cấp bậc -->
         <li><a href="/">Trang chủ</a></li>
         <li><a href="/dien-thoai">Điện thoại</a></li>
         <li>iPhone 16</li>
-    </ol>
-</nav>
+      </ol>
+    </nav>
 
     <!-- Bao bọc nội dung chính của trang bằng thẻ main -->
 
-<main>
+    <main>
+      <!-- Dùng section để phân tách khu vực giới thiệu sản phẩm -->
 
-        <!-- Dùng section để phân tách khu vực giới thiệu sản phẩm -->
+      <section class="product-essential">
+        <!-- 3. Khu vực sản phẩm (5 ảnh): Dùng figure để chứa ảnh minh họa -->
 
-<section class="product-essential">
+        <figure>
+          <img
+            src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MCFQ4_AV2?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=YWhETjZQckMwdXJjSkNUSEFXdFRsbFZya2lKWlJmUEwrYndWOTJiVWJWQUYwVmtIbGRkS25RMVpBRlo0bk5DUVBuK0pzejZDSTlLWThyRVNxNm1oWVE"
+            alt="Mặt trước iPhone 16"
+          />
+          <!-- Có thể dùng div hoặc span bọc các ảnh nhỏ phụ -->
+          <div class="thumbnails">
+            <img
+              src="https://cdnv2.tgdd.vn/mwg-static/common/News/1569700/iPhone%2016%20TCBC%201.jpg"
+              alt="Mặt bên"
+            />
+            <img
+              src="https://shopdunk.com/images/uploaded/iPhone%2016/iphone-16-pro-va-pro-max-mau-vang-sa-mac.jpg"
+              alt="Mặt sau"
+            />
+            <img
+              src="https://happyphone.vn/wp-content/uploads/2024/05/Cong-sac-Type-C-tren-iPhone-16-va-iPhone-16-Plus.jpg"
+              alt="Cổng sạc"
+            />
+            <img
+              src="https://cdn2.fptshop.com.vn/unsafe/800x0/Iphone_16_2_c7710010e3.jpg"
+              alt="Vỏ hộp"
+            />
+          </div>
+        </figure>
 
-            <!-- 3. Khu vực sản phẩm (5 ảnh): Dùng figure để chứa ảnh minh họa -->
+        <!-- 4. Thông tin sản phẩm: Dùng article vì đây là nội dung độc lập về một mặt hàng -->
+        <article>
+          <h2>iPhone 16 Pro Max</h2>
+          <!-- Tên sản phẩm dùng h2 -->
+          <p class="price">29.990.000đ</p>
+          <!-- Giá tiền -->
+          <div class="rating">⭐⭐⭐⭐⭐ (500 đánh giá)</div>
+          <p class="description">Mô tả tóm tắt về hiệu năng và camera...</p>
+        </article>
+      </section>
 
-<figure>
-            <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MCFQ4_AV2?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=YWhETjZQckMwdXJjSkNUSEFXdFRsbFZya2lKWlJmUEwrYndWOTJiVWJWQUYwVmtIbGRkS25RMVpBRlo0bk5DUVBuK0pzejZDSTlLWThyRVNxNm1oWVE" alt="Mặt trước iPhone 16">
-                <!-- Có thể dùng div hoặc span bọc các ảnh nhỏ phụ -->
-            <div class="thumbnails">
-                <img src="https://cdnv2.tgdd.vn/mwg-static/common/News/1569700/iPhone%2016%20TCBC%201.jpg" alt="Mặt bên">
-                <img src="https://shopdunk.com/images/uploaded/iPhone%2016/iphone-16-pro-va-pro-max-mau-vang-sa-mac.jpg" alt="Mặt sau">
-                <img src="https://happyphone.vn/wp-content/uploads/2024/05/Cong-sac-Type-C-tren-iPhone-16-va-iPhone-16-Plus.jpg" alt="Cổng sạc">
-                <img src="https://cdn2.fptshop.com.vn/unsafe/800x0/Iphone_16_2_c7710010e3.jpg" alt="Vỏ hộp">
-            </div>
-</figure>
-
-<!-- 4. Thông tin sản phẩm: Dùng article vì đây là nội dung độc lập về một mặt hàng -->
-<article>
-            <h2>iPhone 16 Pro Max</h2> <!-- Tên sản phẩm dùng h2 -->
-            <p class="price">29.990.000đ</p> <!-- Giá tiền -->
-            <div class="rating">⭐⭐⭐⭐⭐ (500 đánh giá)</div>
-            <p class="description">Mô tả tóm tắt về hiệu năng và camera...</p>
-</article>
-</section>
-
-<!-- 5. Bảng thông số kỹ thuật: Dùng thẻ table cho dữ liệu dạng bảng -->
-<section>
+      <!-- 5. Bảng thông số kỹ thuật: Dùng thẻ table cho dữ liệu dạng bảng -->
+      <section>
         <h3>Thông số kỹ thuật</h3>
-        <table> <!-- table vì đây là dữ liệu so sánh/đối chiếu -->
-        <thead> <!-- Phần tiêu đề của bảng -->
+        <table>
+          <!-- table vì đây là dữ liệu so sánh/đối chiếu -->
+          <thead>
+            <!-- Phần tiêu đề của bảng -->
             <tr>
-                    <th>Thuộc tính</th>
-                    <th>Chi tiết</th>
+              <th>Thuộc tính</th>
+              <th>Chi tiết</th>
             </tr>
-        </thead>
-        <tbody> <!-- Phần nội dung chính của bảng -->
+          </thead>
+          <tbody>
+            <!-- Phần nội dung chính của bảng -->
             <tr>
-                    <td>Màn hình</td>
-                    <td>6.7 inch</td>
+              <td>Màn hình</td>
+              <td>6.7 inch</td>
             </tr>
-        </tbody>
+          </tbody>
         </table>
-    </section>
+      </section>
 
-<!-- 6. Khu vực đánh giá/bình luận: Dùng section riêng biệt -->
-<section id="reviews">
-            <h3>Đánh giá từ khách hàng</h3>
-            <article> <!-- Mỗi bình luận là một nội dung độc lập nên dùng article -->
-                <strong>Nguyễn Hữu Luân</strong>
-                <p>Sản phẩm rất tốt, giao hàng nhanh!</p>
-            </article>
-        </section>
+      <!-- 6. Khu vực đánh giá/bình luận: Dùng section riêng biệt -->
+      <section id="reviews">
+        <h3>Đánh giá từ khách hàng</h3>
+        <article>
+          <!-- Mỗi bình luận là một nội dung độc lập nên dùng article -->
+          <strong>Nguyễn Hữu Luân</strong>
+          <p>Sản phẩm rất tốt, giao hàng nhanh!</p>
+        </article>
+      </section>
+    </main>
 
-</main>
-
-<!-- 7. Sidebar: Dùng aside cho nội dung liên quan gián tiếp đến main -->
-<aside>
-        <h3>Sản phẩm tương tự</h3> <!-- Sidebar thường chứa gợi ý -->
-        <ul>
-            <li><a href="#">Samsung S24 Ultra</a></li>
-            <li><a href="#">Xiaomi 14 Pro</a></li>
-        </ul>
+    <!-- 7. Sidebar: Dùng aside cho nội dung liên quan gián tiếp đến main -->
+    <aside>
+      <h3>Sản phẩm tương tự</h3>
+      <!-- Sidebar thường chứa gợi ý -->
+      <ul>
+        <li><a href="#">Samsung S24 Ultra</a></li>
+        <li><a href="#">Xiaomi 14 Pro</a></li>
+      </ul>
     </aside>
 
-<!-- 8. Chân trang: Dùng footer -->
-<footer>
-        <p>&copy; 2026 ShopTLU - Địa chỉ: Hà Nội, Việt Nam</p> <!-- footer chứa thông tin bản quyền/liên hệ -->
+    <!-- 8. Chân trang: Dùng footer -->
+    <footer>
+      <p>&copy; 2026 ShopTLU - Địa chỉ: Hà Nội, Việt Nam</p>
+      <!-- footer chứa thông tin bản quyền/liên hệ -->
     </footer>
-
-</body>
+  </body>
 </html>
 ```
+
+CÂU C1:
+
+-Việc lạm dụng thẻ < div> cho mọi thành phần là một quan niệm sai lầm trong phát triển web hiện nay.Có nhiều lý do dẫn đến sai làm này có thể là lý do kỹ thuật:
+
+    -SEO (Tối ưu hóa công cụ tìm kiếm): Các công cụ tìm kiếm như Google sử dụng robot để đọc nội dung trang web. Nếu mọi thứ đều là <div>, robot sẽ khó xác định đâu là nội dung chính, đâu là thanh điều hướng hay chân trang. Việc dùng các thẻ như <main>, <article>, <nav> giúp công cụ tìm kiếm xếp hạng trang web tốt hơn và phân loại trang web dễ dàng hơn.
+
+    -Accessibility (Khả năng tiếp cận): Những người khiếm thị sử dụng trình đọc màn hình (Screen Readers) để duyệt web. Trình đọc màn hình dựa vào HTML ngữ nghĩa để thông báo cho người dùng biết họ đang ở mục lục hay một bài viết. Một trang web toàn thẻ <div> sẽ khiến họ hoàn toàn mất phương hướng và không dễ dàng tìm kiếm được nội dung.
+
+-VÍ DỤ:
+
+\*Ta sẽ so sánh 2 cách viết của 1 thanh điều hướng:
+
+     + Khi dùng div: <div class="nav-container">...</div> —> Trình duyệt và thiết bị hỗ trợ chỉ coi đây là một khối hộp vô danh.
+
+     + Khi dùng ngữ nghĩa: <nav>...</nav> — Chỉ cần dùng thẻ này, các công cụ hỗ trợ sẽ tự động hiểu đây là khu vực chứa các liên kết chính, giúp người dùng nhảy nhanh đến phần menu mà không cần đọc hết trang.
+
+-Tuy nhiên,< div > vẫn phù hợp trong một số trường hợp, ví dụ như sử dụng phần chứa để phục vụ mục đích định dạng CSS hoặc chia bố cục mà bản thân nó không mang ý nghĩa nội dung cụ thể.
