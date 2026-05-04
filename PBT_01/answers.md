@@ -111,9 +111,9 @@ BÀI B3:
 
   -Lỗi 10: Sau dòng 5 chưa có thẻ < meta name...> -> < meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  -Lỗi 11: Dòng 4 và 5 bị đảo thứ tự đổi lại cho nhau
+  -Lỗi 11: Dòng 4 và 5 bị đảo thứ tự nên đổi lại cho nhau
 
-  -Lỗi 12: Dòng 9 và 10 bị lộn thứ tự đảo lại cho nhau
+  -Lỗi 12: Dòng 9 và 10 bị lộn thứ tự nên đảo lại cho nhau
 
   -Lỗi 13: Dòng 1 — <!DOCTYPE> sai cú pháp -> <! DOCTYPE html>
 
@@ -274,7 +274,7 @@ CÂU C1:
 
 -VÍ DỤ:
 
-\*Ta sẽ so sánh 2 cách viết của 1 thanh điều hướng:
+*Ta sẽ so sánh 2 cách viết của 1 thanh điều hướng:
 
      + Khi dùng div: <div class="nav-container">...</div> —> Trình duyệt và thiết bị hỗ trợ chỉ coi đây là một khối hộp vô danh.
 
