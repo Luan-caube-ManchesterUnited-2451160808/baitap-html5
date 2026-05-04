@@ -139,7 +139,7 @@ Bài B4:
 ![Ảnh element](./section.jpg)
 
 Câu C1:
-''' html
+```html
 <!DOCTYPE html>
 
 <html lang="vi">
@@ -246,4 +246,4 @@ Câu C1:
 
 </body>
 </html>
-'''
+```
