@@ -1,6 +1,6 @@
 PHẦN A: KIỂM TRA ĐỌC HIỂU
 
-CÂU A1:
+Câu A1:
 
 1.type="email" --> Ô nhập văn bản, tự động kiểm tra định dạng phải có ký tự "@" --> Dùng cho form đăng ký tài khoản khách hàng.
 
@@ -22,7 +22,7 @@ CÂU A1:
 
 10.type="search" --> Ô nhập văn bản có nút "x" để xóa nhanh nội dung --> Dùng cho thanh tìm kiếm tên sản phẩm trên đầu trang web.
 
-CÂU A2:
+Câu A2:
 
 -Trường hợp 1: Biểu mẫu không được gửi vì thuộc tính required bắt buộc người dùng không được để trống ô nhập dữ liệu. Vì value="" nên trình duyệt sẽ chặn việc gửi biểu mẫu.
 
@@ -34,7 +34,7 @@ CÂU A2:
 
 -Trường hợp 5: Lỗi quá ngắn vì thuộc tính minlength="8" yêu cầu mật khẩu phải có ít nhất 8 ký tự. Chuỗi "123" chỉ có 3 ký tự, không đủ độ dài tối thiểu.
 
-CÂU A3:
+Câu A3:
 
 1.Tại sao < label for="email">quan trọng cho trình đọc màn hình người dùng?
 
@@ -56,7 +56,7 @@ CÂU A3:
 
         + Trong HTML, việc sử dụng các thẻ có tính ngữ nghĩa gốc như <label> luôn được ưu tiên hơn các thuộc tính ARIA vì chúng hỗ trợ trình duyệt và thiết bị hỗ trợ tốt hơn mà không cần cấu hình phức tạp.
 
-CÂU A4:
+Câu A4:
 
 1.Giải thích thuộc tính thích hợp loading="lazy"trên thẻ < img>. Nó cải thiện được gì? Khi nào KHÔNG nên sử dụng?
 
@@ -106,7 +106,7 @@ CÂU A4:
 
   - Hình ảnh biểu đồ doanh thu Q1/2026: alt="Biểu đồ cột hiển thị doanh thu quý 1 năm 2026 đạt mức tăng trưởng 15% so với cùng kỳ năm ngoái".
 
-CÂU A5:
+Câu A5:
 
 - Dùng cách 1 khi hình ảnh đóng vai trò là một phần của nội dung văn bản hoặc chỉ mang tính chất trang trí, minh họa đơn thuần mà không cần chú thích đi kèm.
 
@@ -114,7 +114,7 @@ CÂU A5:
 
 PHẦN C: PHÂN TÍCH VÀ SUY LUẬN
 
-CÂU C1:
+Câu C1:
 
 Danh sách lỗi và cách sửa chúng:
 
@@ -134,7 +134,7 @@ Danh sách lỗi và cách sửa chúng:
 
 -Lỗi 8: Gửi sử dụng nút thay thế đầu vào → không hoàn toàn nhưng không tối ưu
 
-CÂU C2:
+Câu C2:
 
 1.Độ bảo mật HTML5:
 
