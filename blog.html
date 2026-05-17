@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/blog.css" />
+    <link rel="stylesheet" href="css/comments.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/custom-theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <section id="blog" class="py-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <article class="card mb-4">
+              <img
+                src="https://laptop88.vn/media/news/2402_html-la-gi.jpg"
+                class="card-img-top"
+                alt="Building a Portfolio"
+              />
+              <div class="card-body">
+                <span class="badge bg-primary">Học tập</span>
+                <h3 class="card-title mt-2">HTML</h3>
+                <p class="card-text text-muted">
+                  <small>Viết bởi Luân • Jan 18, 2026 • 5 phút</small>
+                </p>
+                <p class="card-text">
+                  Những mẹo nhỏ giúp nhớ và dễ dàng sử dụng các thẻ trong HTML.
+                </p>
+                <a href="#" class="btn btn-outline-primary">Đọc tiếp</a>
+              </div>
+            </article>
+            <article class="card mb-4">
+              <img
+                src="https://digitalpress.fra1.cdn.digitaloceanspaces.com/4tg23ij/2020/10/css-grid.jpg"
+                class="card-img-top"
+                alt="UI trends"
+              />
+              <div class="card-body">
+                <span class="badge bg-success">Frontend</span>
+                <h3 class="card-title mt-2">Tác dụng của Grid Layout</h3>
+                <p class="card-text text-muted">
+                  <small>Viết bởi Luân • Jan 18, 2026 • 5 phút đọc</small>
+                </p>
+                <p class="card-text">
+                  Grid Layout chia web page thành nhiều cột và hàng, cùng với
+                  khả năng chỉ định vị trí và kích thước của các building block
+                  element dựa trên kích thước, vị trí, và layer của hàng và cột
+                  ta đã tạo.
+                </p>
+                <a href="#" class="btn btn-outline-primary">Đọc tiếp</a>
+              </div>
+            </article>
+            <article class="card mb-4">
+              <img
+                src="https://since-inc.jp/wp-content/uploads/2015/04/thumb_css.jpg"
+                class="card-img-top"
+                alt="JS tips"
+              />
+              <div class="card-body">
+                <span class="badge bg-warning">Học tập</span>
+                <h3 class="card-title mt-2">CSS Tips</h3>
+                <p class="card-text text-muted">
+                  <small>Viết bởi Luân • Jan 19, 2026 • 25 phút đọc</small>
+                </p>
+                <p class="card-text">Những kỹ năng khi học CSS</p>
+                <a href="#" class="btn btn-outline-primary">Đọc tiếp</a>
+              </div>
+            </article>
+            <div class="card mb-4">
+              <div class="card-header bg-white">
+                <h5 class="mb-0">Hãy để lại bình luận của bạn tại đây</h5>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="name" class="form-label">Tên hiển thị</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="comment" class="form-label">Bình luận</label>
+                    <textarea
+                      class="form-control"
+                      id="comment"
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    Đăng bình luận
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="comments-section">
+              <h5 class="mb-4">3 Bình luận</h5>
+              <div class="comment mb-4">
+                <div class="d-flex">
+                  <img
+                    src="https://static-images.vnncdn.net/vps_images_publish/000001/000003/2025/10/11/bruno-fernandes-tu-choi-saudi-arabia-quyet-khong-roi-mu-1302.jpg?width=0&s=5VFDi8BCfaG2DLlfL7RHag"
+                    class="rounded-circle me-3"
+                    width="50"
+                    height="50"
+                    style="object-fit: cover"
+                  />
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                      <h6 class="mb-0">B.Fernandes</h6>
+                      <small class="text-muted">2 giờ trước</small>
+                    </div>
+                    <p class="mb-2">Rất hữu ích/</p>
+                    <button class="btn btn-sm btn-link">
+                      <i class="bi bi-reply"></i>Trả lời
+                    </button>
+                    <div class="comment reply ms-5 mt-3">
+                      <div class="d-flex">
+                        <img
+                          src="https://images.unsplash.com/photo-1721133942491-ad470bc63d8c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGJldXRpZnVsJTIwYm95fGVufDB8fDB8fHww"
+                          class="rounded-circle me-3"
+                          width="50"
+                          height="50"
+                          style="object-fit: cover"
+                        />
+                        <div class="flex-grow-1">
+                          <div class="d-flex justify-content-between">
+                            <h6 class="mb-0">Nguyễn Luân</h6>
+                            <small class="text-muted">1 giờ trước</small>
+                          </div>
+                          <p class="mb-2">Cảm ơn bạn,chúc may mắn.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="comment mb-4">
+                <div class="d-flex">
+                  <img
+                    src="https://assets.goal.com/images/v3/blt41f0c49df08799c0/GOAL_-_Blank_WEB_-_Facebook.jpg?auto=webp&format=pjpg&width=3840&quality=60"
+                    class="rounded-circle me-3"
+                    width="50"
+                    height="50"
+                    style="object-fit: cover"
+                  />
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                      <h6 class="mb-0">Mason Mount</h6>
+                      <small class="text-muted">5 giờ trước</small>
+                    </div>
+                    <p>Chúng thật thú vị!</p>
+                    <button class="btn btn-sm btn-link">
+                      <i class="bi bi-reply"></i> Trả lời
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="comment mb-4">
+                <div class="d-flex">
+                  <img
+                    src="https://ichef.bbci.co.uk/ace/standard/3840/cpsprodpb/be2a/live/820adca0-3632-11f0-b2c9-2d36257649ec.jpg"
+                    class="rounded-circle me-3"
+                    width="50"
+                    height="50"
+                    style="object-fit: cover"
+                  />
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                      <h6 class="mb-0">Casemiro</h6>
+                      <small class="text-muted">21 giờ trước</small>
+                    </div>
+                    <p>Những mẹo tuyệt vời, cảm ơn nhiều!</p>
+                    <button class="btn btn-sm btn-link">
+                      <i class="bi bi-reply"></i> Trả lời
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="sticky-top pt-4">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h5 class="card-title mb-3 fw-bold">Tìm kiếm</h5>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Tìm kiếm..."
+                    />
+                    <button class="btn btn-primary" type="button">Xong</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mb-4">
+                <div class="card-header bg-white">
+                  <h5 class="mb-0">Danh mục</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between">
+                    Công nghệ <span class="badge bg-primary">12</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between">
+                    Học tập <span class="badge bg-primary">8</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between">
+                    Thiết kế <span class="badge bg-success">2</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card mb-4">
+                <div class="card-header bg-white border-bottom-0 pt-3">
+                  <h5 class="mb-0 fw-bold">Các bài viết mới</h5>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex mb-3">
+                    <img
+                      src="https://laptop88.vn/media/news/2402_html-la-gi.jpg"
+                      class="rounded object-fit-cover"
+                      width="60"
+                      height="60"
+                      alt="Post 1"
+                    />
+                    <div class="ms-3">
+                      <h6 class="mb-1 fw-semibold">
+                        <a href="#" class="text-decoration-none text-dark"
+                          >HTML</a
+                        >
+                      </h6>
+                      <small class="text-muted">Jan 18, 2026</small>
+                    </div>
+                  </div>
+                  <div class="d-flex mb-3">
+                    <img
+                      src="https://digitalpress.fra1.cdn.digitaloceanspaces.com/4tg23ij/2020/10/css-grid.jpg"
+                      class="rounded object-fit-cover"
+                      width="60"
+                      height="60"
+                      alt="Post 2"
+                    />
+                    <div class="ms-3">
+                      <h6 class="mb-1 fw-semibold">
+                        <a href="#" class="text-decoration-none text-dark"
+                          >Tác dụng của Grid Layout</a
+                        >
+                      </h6>
+                      <small class="text-muted">Jan 18, 2026</small>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <img
+                      src="https://since-inc.jp/wp-content/uploads/2015/04/thumb_css.jpg"
+                      class="rounded object-fit-cover"
+                      width="60"
+                      height="60"
+                      alt="Post 3"
+                    />
+                    <div class="ms-3">
+                      <h6 class="mb-1 fw-semibold">
+                        <a href="#" class="text-decoration-none text-dark"
+                          >CSS Tips</a
+                        >
+                      </h6>
+                      <small class="text-muted">Jan 19, 2026</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mb-4">
+                <div class="card-header bg-white">
+                  <h5 class="mb-0">Thẻ</h5>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-secondary">HTML</span>
+                    <span class="badge bg-secondary">CSS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
