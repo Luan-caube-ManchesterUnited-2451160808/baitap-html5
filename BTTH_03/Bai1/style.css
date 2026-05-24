@@ -28,7 +28,7 @@ h5 {
   font-size: 20px;
 }
 .btn-add {
-  background-color: rgb(205, 89, 89);
+  background-color: rgb(92, 126, 180);
   padding: 5px 10px;
   margin: auto;
   margin-left: 350px;
@@ -40,7 +40,7 @@ h5 {
   cursor: pointer;
 }
 .btn-add:hover {
-  background-color: rgb(246, 75, 75);
+  background-color: rgb(47, 82, 208);
 }
 .button1 {
   border-radius: 100px;
@@ -62,13 +62,13 @@ h5 {
   background-color: #4e4c4c; /* Di chuột vào thì đậm hơn */
 }
 .button3 {
-  background-color: rgb(63, 106, 152);
+  background-color: rgb(243, 83, 83);
   border-radius: 100px;
   padding: 8px 16px;
   cursor: pointer;
 }
 .button3:hover {
-  background-color: #114f92; /* Di chuột vào thì xanh đậm hơn */
+  background-color: #e50808; /* Di chuột vào thì xanh đậm hơn */
 }
 th {
   background-color: rgb(33, 32, 35);
