@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý công việc cá nhân</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quản lý công việc cá nhân</h1>
+
+      <div class="stats">
+        <span>Tổng: <b id="total-tasks">0</b></span> |
+        <span>Hoàn thành: <b id="completed-tasks">0</b></span> |
+        <span>Chưa xong: <b id="pending-tasks">0</b></span>
+      </div>
+
+      <button id="open-form-btn">+ Thêm công việc</button>
+
+      <div id="task-list" class="task-list"></div>
+
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <h2 id="form-title">Thêm công việc mới</h2>
+          <form id="task-form">
+            <input type="hidden" id="task-id" />
+            <input type="text" id="task-title" placeholder="Tiêu đề" required />
+            <textarea id="task-desc" placeholder="Mô tả ngắn"></textarea>
+            <input type="date" id="task-deadline" required />
+            <select id="task-priority">
+              <option value="Low">Thấp</option>
+              <option value="Medium">Trung bình</option>
+              <option value="High">Cao</option>
+            </select>
+            <div class="form-actions">
+              <button type="submit" id="save-btn">Lưu</button>
+              <button type="button" id="close-form-btn">Hủy</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
