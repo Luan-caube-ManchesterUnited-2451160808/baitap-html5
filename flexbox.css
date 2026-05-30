@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --card: #1c2230;
+  --border: rgba(255,255,255,0.08);
+  --accent: #58a6ff;
+  --accent2: #f78166;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --nav-h: 64px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ═══════════════════════════════════════════════
+   PHẦN 1 — NAVIGATION BAR (Flexbox)
+═══════════════════════════════════════════════ */
+
+.navbar {
+  display: flex;             /* Flexbox ngang */
+  align-items: center;       /* căn giữa dọc hoàn hảo */
+  height: var(--nav-h);
+  padding: 0 32px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo — bên trái */
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+
+/* Menu — ở giữa */
+.nav-menu {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  margin: 0 auto;            /* đẩy sang giữa */
+}
+
+.nav-menu a {
+  display: block;
+  padding: 8px 16px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  position: relative;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 16px; right: 16px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+.nav-menu a:hover {
+  color: var(--text);
+  background: rgba(88, 166, 255, 0.08);
+}
+.nav-menu a:hover::after { transform: scaleX(1); }  /* gạch chân khi hover */
+
+/* Auth buttons — bên phải */
+.nav-auth {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-login {
+  padding: 7px 18px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  font-family: inherit;
+}
+.btn-login:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
+
+.btn-register {
+  padding: 7px 18px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #000;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  font-family: inherit;
+}
+.btn-register:hover { opacity: 0.85; transform: translateY(-1px); }
+
+/* ═══════════════════════════════════════════════
+   PHẦN 2 — PRODUCT CARD GRID (Flexbox)
+═══════════════════════════════════════════════ */
+
+.products-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.products-section h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+/* Container: flex + wrap → 4 cột */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Mỗi card: 4 cột với gap 20px */
+.card {
+  flex: 0 0 calc(25% - 15px);  /* 4 cột, trừ đi gap */
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+
+  /* Card bên trong cũng dùng flex (hướng cột) */
+  display: flex;
+  flex-direction: column;
+
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);           /* nổi lên khi hover */
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+}
+
+/* Ảnh sản phẩm (trên) */
+.card-img {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  background: linear-gradient(135deg, #1c2230, #0d1117);
+  flex-shrink: 0;
+}
+
+/* Nội dung text (giữa) */
+.card-body {
+  padding: 14px;
+  flex: 1;                   /* chiếm hết không gian còn lại */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.card-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.card-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 8px;
+}
+
+/* Nút "Mua" (dưới cùng — luôn ở đáy) */
+.card-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: auto;          /* ← đẩy nút xuống đáy card */
+  transition: opacity 0.2s;
+  letter-spacing: 0.03em;
+}
+.card-btn:hover { opacity: 0.82; }
+
+/* Responsive: 2 cột trên màn nhỏ */
+@media (max-width: 768px) {
+  .card { flex: 0 0 calc(50% - 10px); }
+  .nav-menu { display: none; }
+}
