@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Đoán Số</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', sans-serif;
+            color: #e0e0e0;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            width: 400px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 8px; }
+        .subtitle { color: #888; margin-bottom: 30px; font-size: 0.9rem; }
+
+        .attempts-bar {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .dot {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            font-size: 0.7rem;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s;
+        }
+        .dot.used   { background: #e74c3c; border-color: #e74c3c; }
+        .dot.active { background: #f39c12; border-color: #f39c12; animation: pulse 1s infinite; }
+        .dot.done   { background: #2ecc71; border-color: #2ecc71; }
+
+        @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+
+        .hint {
+            font-size: 1.5rem;
+            min-height: 50px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .history {
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 20px;
+            min-height: 40px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .input-row {
+            display: flex; gap: 10px;
+        }
+
+        input[type="number"] {
+            flex: 1;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input[type="number"]:focus { border-color: #3498db; }
+        input[type="number"]::placeholder { color: #666; }
+
+        button {
+            padding: 14px 20px;
+            border: none;
+            border-radius: 12px;
+            background: #3498db;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            font-weight: bold;
+        }
+        button:hover { background: #2980b9; transform: translateY(-1px); }
+        button:active { transform: translateY(0); }
+
+        .error-msg {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            min-height: 20px;
+        }
+
+        .result-overlay {
+            display: none;
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.7);
+            align-items: center; justify-content: center;
+            z-index: 100;
+        }
+        .result-overlay.show { display: flex; }
+        .result-box {
+            background: #1a1a2e;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.15);
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes popIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .result-box h2 { font-size: 2rem; margin-bottom: 10px; }
+        .result-box p  { color: #aaa; margin-bottom: 20px; }
+        .result-box button { width: 100%; padding: 14px; font-size: 1rem; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>🎯 Đoán Số</h1>
+    <p class="subtitle">Số bí mật từ 1 đến 100 — 7 lần đoán</p>
+
+    <div class="attempts-bar" id="attemptsBar"></div>
+
+    <div class="hint" id="hint">Hãy đoán số đầu tiên!</div>
+
+    <div class="history" id="history">Chưa có lần đoán nào.</div>
+
+    <div class="input-row">
+        <input type="number" id="guessInput" min="1" max="100" placeholder="Nhập 1–100" />
+        <button onclick="makeGuess()">Đoán</button>
+    </div>
+    <div class="error-msg" id="errorMsg"></div>
+</div>
+
+<!-- Result overlay -->
+<div class="result-overlay" id="resultOverlay">
+    <div class="result-box">
+        <h2 id="resultEmoji">🎉</h2>
+        <h2 id="resultTitle">Chiến thắng!</h2>
+        <p id="resultMsg"></p>
+        <button onclick="restartGame()">🔄 Chơi lại</button>
+    </div>
+</div>
+
+<script>
+    const MAX_ATTEMPTS = 7;
+
+    let secretNumber, attempts, guessedNumbers, gameOver;
+
+    function initGame() {
+        secretNumber   = Math.floor(Math.random() * 100) + 1;
+        attempts       = 0;
+        guessedNumbers = [];
+        gameOver       = false;
+
+        document.getElementById("hint").textContent     = "Hãy đoán số đầu tiên!";
+        document.getElementById("history").textContent  = "Chưa có lần đoán nào.";
+        document.getElementById("errorMsg").textContent = "";
+        document.getElementById("guessInput").value     = "";
+        document.getElementById("resultOverlay").classList.remove("show");
+
+        renderDots();
+    }
+
+    function renderDots() {
+        const bar = document.getElementById("attemptsBar");
+        bar.innerHTML = "";
+        for (let i = 0; i < MAX_ATTEMPTS; i++) {
+            const d = document.createElement("div");
+            d.className = "dot";
+            if (i < attempts)         d.className += " used";
+            else if (i === attempts && !gameOver) d.className += " active";
+            d.textContent = i + 1;
+            bar.appendChild(d);
+        }
+    }
+
+    function makeGuess() {
+        if (gameOver) return;
+
+        const input = document.getElementById("guessInput").value.trim();
+        const errorEl = document.getElementById("errorMsg");
+        errorEl.textContent = "";
+
+        const guess = parseInt(input, 10);
+
+        if (input === "" || isNaN(guess) || guess < 1 || guess > 100) {
+            errorEl.textContent = "⚠️ Vui lòng nhập số nguyên từ 1 đến 100!";
+            return;
+        }
+
+        if (guessedNumbers.includes(guess)) {
+            errorEl.textContent = `⚠️ Bạn đã đoán số ${guess} rồi! Thử số khác.`;
+            return;
+        }
+
+        attempts++;
+        guessedNumbers.push(guess);
+        document.getElementById("guessInput").value = "";
+        renderDots();
+
+        // Cập nhật lịch sử
+        document.getElementById("history").textContent =
+            "Đã đoán: " + guessedNumbers.join(", ");
+
+        if (guess === secretNumber) {
+            endGame(true, guess);
+        } else if (attempts >= MAX_ATTEMPTS) {
+            endGame(false, guess);
+        } else {
+            const hintEl = document.getElementById("hint");
+            if (guess < secretNumber) {
+                hintEl.textContent = `📈 Cao hơn ${guess}!`;
+                hintEl.style.color = "#2ecc71";
+            } else {
+                hintEl.textContent = `📉 Thấp hơn ${guess}!`;
+                hintEl.style.color = "#e74c3c";
+            }
+        }
+    }
+
+    function endGame(won, lastGuess) {
+        gameOver = true;
+        const overlay = document.getElementById("resultOverlay");
+        const emoji   = document.getElementById("resultEmoji");
+        const title   = document.getElementById("resultTitle");
+        const msg     = document.getElementById("resultMsg");
+
+        if (won) {
+            emoji.textContent = "🎉";
+            title.textContent = "Chiến thắng!";
+            msg.textContent   = `Bạn đoán đúng ${secretNumber} sau ${attempts} lần!`;
+        } else {
+            emoji.textContent = "😢";
+            title.textContent = "Thua rồi!";
+            msg.textContent   = `Hết lượt sau ${attempts} lần. Đáp án là ${secretNumber}.`;
+        }
+        overlay.classList.add("show");
+    }
+
+    function restartGame() { initGame(); }
+
+    // Enter key support
+    document.addEventListener("keydown", e => {
+        if (e.key === "Enter") makeGuess();
+    });
+
+    // Start
+    initGame();
+</script>
+</body>
+</html>
