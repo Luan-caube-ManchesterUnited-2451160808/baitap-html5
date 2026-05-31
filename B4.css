@@ -1,0 +1,49 @@
+/* Quản lý Focus - Vòng lấy nét hiển thị rõ ràng */
+*:focus {
+  outline: 3px solid #ffc107 !important;
+  outline-offset: 2px;
+}
+
+.gallery-container {
+  max-width: 800px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainImage {
+  max-height: 100%;
+  transition: transform 0.3s ease;
+}
+
+/* Command Palette */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.command-box {
+  background: white;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.list-group-item.active {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.list-group-item {
+  cursor: pointer;
+}

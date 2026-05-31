@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xác thực tài khoản - Real-time</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-light">
+    <div class="container py-5">
+      <div
+        class="form-wrapper shadow p-4 bg-white mx-auto"
+        style="max-width: 500px; border-radius: 15px"
+      >
+        <h2 class="text-center mb-4 fw-bold text-primary">Đăng Ký Tài Khoản</h2>
+        <form id="registrationForm">
+          <div class="mb-3 position-relative">
+            <label class="form-label fw-bold small">Họ và tên</label>
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              placeholder="Từ 2-50 ký tự"
+            />
+            <span class="status-icon" id="nameStatus"></span>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-bold small">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="nguyenluan@gmail.com"
+            />
+            <div class="error-msg" id="emailError">
+              Email không đúng định dạng
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-bold small">Mật khẩu</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="Nhập mật khẩu"
+            />
+            <div class="progress mt-2" style="height: 6px">
+              <div
+                id="strengthBar"
+                class="progress-bar"
+                role="progressbar"
+                style="width: 0%"
+              ></div>
+            </div>
+            <small id="strengthText" class="text-muted"
+              >Độ mạnh: Chưa nhập</small
+            >
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-bold small">Xác nhận mật khẩu</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              class="form-control"
+              placeholder="Nhập lại mật khẩu"
+            />
+            <div class="error-msg" id="confirmError">Mật khẩu không khớp</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-bold small">Số điện thoại</label>
+            <input
+              type="text"
+              id="phone"
+              class="form-control"
+              placeholder="0901-234-567"
+              maxlength="12"
+            />
+          </div>
+
+          <button
+            type="submit"
+            id="submitBtn"
+            class="btn btn-primary w-100 py-2 fw-bold mt-3"
+            disabled
+          >
+            Gửi Đăng Ký
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div id="successModal" class="custom-modal">
+      <div class="modal-content-custom text-center shadow-lg">
+        <h3 class="text-success mb-3">🎉 Đăng ký thành công!</h3>
+        <div
+          id="resultInfo"
+          class="text-start mb-4 bg-light p-3 rounded small"
+        ></div>
+        <button class="btn btn-dark w-100" id="closeModalBtn">Đóng</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
