@@ -1,0 +1,73 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-md;
+  padding: $spacing-md;
+
+  @include respond-to($breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to($breakpoint-desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: $spacing-md;
+  transition: all 0.3s ease;
+  @include card-shadow; // Sử dụng Mixin
+
+  .image-box {
+    // Nesting khối 1
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    @include flex-center;
+
+    img {
+      // Nesting khối 2
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &:hover {
+    // Parent Selector
+    .image-box img {
+      transform: scale(1.1);
+    }
+  }
+
+  .card-info {
+    // Nesting khối 3
+    padding-top: $spacing-md;
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+      color: $primary-color;
+    }
+    .price {
+      font-weight: bold;
+    }
+  }
+}
+
+.btn-buy {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $secondary-color;
+    color: white;
+    transform: scale(1.05);
+  }
+}

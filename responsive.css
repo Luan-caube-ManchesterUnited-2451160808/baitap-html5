@@ -1,0 +1,239 @@
+/* --- CẤU HÌNH CHUNG & MOBILE FIRST --- */
+:root {
+  --font-main: 14px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: var(--font-main);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* Khung chứa ảnh để không bị tràn ra ngoài */
+.image-box {
+  width: 100%;
+  height: 200px; /* Cố định chiều cao vùng chứa ảnh */
+  overflow: hidden; /* Cắt bỏ phần ảnh bị thừa khi phóng to */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Giúp ảnh không bị méo, luôn nằm gọn trong hộp */
+  transition: transform 0.3s ease; /* Hiệu ứng mượt mà */
+}
+
+/* Hiệu ứng khi di chuột vào THẺ (card) thì ẢNH mới phóng to */
+.card:hover .image-box img {
+  transform: scale(
+    1.1
+  ); /* Phóng to 10% nhưng bị image-box cắt bớt, không đè lên chữ */
+}
+
+/* Đảm bảo phần chữ có khoảng cách phía trên */
+.card-info {
+  padding-top: 15px;
+  z-index: 2; /* Đảm bảo chữ luôn nổi lên trên nếu cần */
+  background: white; /* Ngăn ảnh lọt xuống dưới chữ */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Header */
+.header {
+  background: #333;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  display: none;
+} /* Ẩn menu trên mobile */
+
+/* Sidebar & Ads mặc định ẩn trên mobile */
+.sidebar,
+.ads-bar {
+  display: none;
+}
+
+/* Grid Sản phẩm - 1 cột mặc định */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  padding: 15px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column; /* Xếp các thành phần bên trong theo chiều dọc */
+  justify-content: flex-start;
+
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-sizing: border-box;
+
+  /* Đảm bảo các card trong cùng một hàng có chiều cao bằng nhau */
+  height: 100%;
+}
+
+.footer {
+  background: #eee;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* --- TABLET (768px - 1023px) --- */
+@media (min-width: 768px) {
+  :root {
+    --font-main: 16px;
+  }
+
+  .header .hamburger {
+    display: none;
+  }
+  .nav-menu {
+    display: flex;
+    gap: 20px;
+  }
+  .nav-menu a {
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Hiện Sidebar dạng ngang (filter dropdown) */
+  .sidebar {
+    display: block;
+    background: #f4f4f4;
+    padding: 10px 15px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cột */
+  }
+}
+
+/* --- DESKTOP (≥ 1024px) --- */
+@media (min-width: 1024px) {
+  :root {
+    --font-main: 18px;
+  }
+
+  .main-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr 150px; /* Sidebar | Grid | Ads */
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .sidebar,
+  .ads-bar {
+    display: block;
+    background: #fafafa;
+    border: 1px solid #eee;
+    padding: 15px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 cột */
+    padding: 0;
+  }
+}
+.card {
+  transition: all 0.3s ease;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden; /* Quan trọng cho hiệu ứng 3 */
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- 2. Nút "Mua ngay" (Button Hover) --- */
+.btn-buy {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-buy:hover {
+  background-color: #ff4757; /* Màu nền mở rộng */
+  color: white; /* Đổi màu chữ */
+  transform: scale(1.05); /* Tỷ lệ thu nhỏ/phóng to nhẹ */
+}
+
+/* --- 3. Zoom hình ảnh khi di chuột --- */
+.card-img-container {
+  overflow: hidden; /* Cắt phần ảnh thừa khi zoom */
+}
+
+.card img {
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1); /* Phóng to ảnh 10% */
+}
+
+/* --- 4. Loading Spinner (@keyframes) --- */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db; /* Màu viền xoay */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- 5. Làm mờ dần khi cuộn (Fade In) --- */
+.fade-in-section {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
