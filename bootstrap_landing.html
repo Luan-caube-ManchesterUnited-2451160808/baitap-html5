@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Landing Page</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">TECHSTORE</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sản phẩm</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Khuyến mãi</a>
+            </li>
+          </ul>
+
+          <form class="d-flex me-3" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Tìm sản phẩm..."
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-light" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+
+          <div class="navbar-nav">
+            <a class="nav-link position-relative text-white" href="#">
+              <i class="bi bi-cart3 fs-4"></i>
+              <span
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                style="font-size: 0.65rem"
+              >
+                3
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div id="heroCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://surfaceviet.vn/wp-content/uploads/2023/06/banner.jpg"
+            class="d-block w-100 object-fit-cover"
+            style="max-height: 400px"
+            alt="Banner 1"
+          />
+          <div
+            class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-3"
+          >
+            <h2 class="fw-bold">Siêu Sale Mùa Hè</h2>
+            <p>Giảm giá cực sốc lên đến 50% cho toàn bộ phụ kiện công nghệ.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://anphat.com.vn/media/news/12338_gv_ws_asus_935x528.jpg"
+            class="d-block w-100 object-fit-cover"
+            style="max-height: 400px"
+            alt="Banner 2"
+          />
+          <div
+            class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-3"
+          >
+            <h2 class="fw-bold">Laptop Gaming Thế Hệ Mới</h2>
+            <p>Trải nghiệm hiệu năng đỉnh cao với ưu đãi trả góp 0%.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://nghenhinvietnam.vn/uploads/global/tunglampv/2024/t12/27/samsung/samsung_ecosystem_009.jpg"
+            class="d-block w-100 object-fit-cover"
+            style="max-height: 400px"
+            alt="Banner 3"
+          />
+          <div
+            class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-3"
+          >
+            <h2 class="fw-bold">Hệ Sinh Thái Thông Minh</h2>
+            <p>Nâng tầm không gian sống của bạn với các thiết bị Smarthome.</p>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="container mb-5">
+      <h3 class="fw-bold text-center mb-4">Sản Phẩm Mới Nhất</h3>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 position-relative shadow-sm">
+            <span
+              class="position-absolute top-0 start-0 badge bg-danger m-2 px-3 py-2 text-uppercase fw-bold"
+              >Sale</span
+            >
+            <img
+              src="https://chuyensidienthoai.vn/wp-content/uploads/2024/09/Smartphone-Specifications-Explained-2.webp"
+              class="card-img-top"
+              alt="Sản phẩm 1"
+            />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title text-truncate fs-6">
+                Điện thoại thông minh
+              </h5>
+              <p class="card-text text-danger fw-bold mb-3">
+                18.990.000đ
+                <span
+                  class="text-muted text-decoration-line-through fw-normal small fs-7"
+                  >21.990.000đ</span
+                >
+              </p>
+
+              <button
+                type="button"
+                class="btn btn-primary mt-auto w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#product1"
+              >
+                Xem nhanh
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 position-relative shadow-sm">
+            <span
+              class="position-absolute top-0 start-0 badge bg-danger m-2 px-3 py-2 text-uppercase fw-bold"
+              >Sale</span
+            >
+            <img
+              src="https://vcdn1-sohoa.vnecdn.net/2022/01/13/PANA0816-1642047323.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=0KJ4Hqd3Ai0WlkiCQtSp4A"
+              class="card-img-top"
+              alt="Sản phẩm 2"
+            />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title text-truncate fs-6">
+                Tai nghe chống ồn không dây Pro
+              </h5>
+              <p class="card-text text-danger fw-bold mb-3">4.500.000đ</p>
+              <button
+                type="button"
+                class="btn btn-primary mt-auto w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#product2"
+              >
+                Xem nhanh
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 position-relative shadow-sm">
+            <img
+              src="https://donghoduyanh.com/images/news/2023/06/12/large/dong-ho-thong-minh_1686508180.jpg"
+              class="card-img-top"
+              alt="Sản phẩm 3"
+            />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title text-truncate fs-6">Đồng hồ thông minh</h5>
+              <p class="card-text text-danger fw-bold mb-3">3.200.000đ</p>
+              <button
+                type="button"
+                class="btn btn-primary mt-auto w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#product3"
+              >
+                Xem nhanh
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 position-relative shadow-sm">
+            <span
+              class="position-absolute top-0 start-0 badge bg-danger m-2 px-3 py-2 text-uppercase fw-bold"
+              >Sale</span
+            >
+            <img
+              src="https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/ban_phim_co_khong_day_duoi_1_trieu_08d8579796.png"
+              class="card-img-top"
+              alt="Sản phẩm 4"
+            />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title text-truncate fs-6">
+                Bàn phím cơ Custom không dây RGB
+              </h5>
+              <p class="card-text text-danger fw-bold mb-3">1.850.000đ</p>
+              <button
+                type="button"
+                class="btn btn-primary mt-auto w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#product4"
+              >
+                Xem nhanh
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="product1"
+      tabindex="-1"
+      aria-labelledby="productModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="productModalLabel">
+              Chi tiết sản phẩm
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-4">
+              <div class="col-12 col-md-6">
+                <img
+                  src="https://cdn.tgdd.vn/Files/2022/07/16/1448299/nhung-loi-ich-cua-dien-thoai-thong-minh-trong-cuoc-6.jpg"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Chi tiết sản phẩm"
+                />
+              </div>
+
+              <div
+                class="col-12 col-md-6 d-flex flex-column justify-content-center"
+              >
+                <h4 class="fw-bold mb-2">Sản Phẩm Công Nghệ Cao Cấp</h4>
+                <p class="text-danger fs-4 fw-bold mb-3">Giá ưu đãi cực tốt</p>
+                <p class="text-muted small mb-4">
+                  Đây là đoạn văn bản chi tiết mô tả về các tính năng vượt trội,
+                  thông số kỹ thuật ấn tượng và chính sách bảo hành chính hãng
+                  đổi trả trong vòng 30 ngày của sản phẩm.
+                </p>
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn btn-success">
+                    <i class="bi bi-bag-plus me-2"></i>Thêm vào giỏ hàng
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Đóng
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="product2"
+      tabindex="-1"
+      aria-labelledby="productModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="productModalLabel">
+              Chi tiết sản phẩm
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-4">
+              <div class="col-12 col-md-6">
+                <img
+                  src="https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/2022_8_21_637967068849406106_524288_141218524792142_539288978-4.jpg"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Chi tiết sản phẩm"
+                />
+              </div>
+
+              <div
+                class="col-12 col-md-6 d-flex flex-column justify-content-center"
+              >
+                <h4 class="fw-bold mb-2">Sản Phẩm Công Nghệ Cao Cấp</h4>
+                <p class="text-danger fs-4 fw-bold mb-3">Giá ưu đãi cực tốt</p>
+                <p class="text-muted small mb-4">
+                  Đây là đoạn văn bản chi tiết mô tả về các tính năng vượt trội,
+                  thông số kỹ thuật ấn tượng và chính sách bảo hành chính hãng
+                  đổi trả trong vòng 30 ngày của sản phẩm.
+                </p>
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn btn-success">
+                    <i class="bi bi-bag-plus me-2"></i>Thêm vào giỏ hàng
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Đóng
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="product3"
+      tabindex="-1"
+      aria-labelledby="productModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="productModalLabel">
+              Chi tiết sản phẩm
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-4">
+              <div class="col-12 col-md-6">
+                <img
+                  src="https://file.hstatic.net/200000289371/file/dong-ho-thong-minh-tre-em-kids-life-xanh_78ae7218ba7e41e8b0a19800f4cb1d5d_grande.jpg"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Chi tiết sản phẩm"
+                />
+              </div>
+
+              <div
+                class="col-12 col-md-6 d-flex flex-column justify-content-center"
+              >
+                <h4 class="fw-bold mb-2">Sản Phẩm Công Nghệ Cao Cấp</h4>
+                <p class="text-danger fs-4 fw-bold mb-3">Giá ưu đãi cực tốt</p>
+                <p class="text-muted small mb-4">
+                  Đây là đoạn văn bản chi tiết mô tả về các tính năng vượt trội,
+                  thông số kỹ thuật ấn tượng và chính sách bảo hành chính hãng
+                  đổi trả trong vòng 30 ngày của sản phẩm.
+                </p>
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn btn-success">
+                    <i class="bi bi-bag-plus me-2"></i>Thêm vào giỏ hàng
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Đóng
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="product4"
+      tabindex="-1"
+      aria-labelledby="productModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="productModalLabel">
+              Chi tiết sản phẩm
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-4">
+              <div class="col-12 col-md-6">
+                <img
+                  src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/a/gaming_8_1__1.png"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Chi tiết sản phẩm"
+                />
+              </div>
+
+              <div
+                class="col-12 col-md-6 d-flex flex-column justify-content-center"
+              >
+                <h4 class="fw-bold mb-2">Sản Phẩm Công Nghệ Cao Cấp</h4>
+                <p class="text-danger fs-4 fw-bold mb-3">Giá ưu đãi cực tốt</p>
+                <p class="text-muted small mb-4">
+                  Đây là đoạn văn bản chi tiết mô tả về các tính năng vượt trội,
+                  thông số kỹ thuật ấn tượng và chính sách bảo hành chính hãng
+                  đổi trả trong vòng 30 ngày của sản phẩm.
+                </p>
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn btn-success">
+                    <i class="bi bi-bag-plus me-2"></i>Thêm vào giỏ hàng
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Đóng
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-md-3">
+            <h5 class="text-uppercase fw-bold mb-3 text-warning">
+              Về TECHSTORE
+            </h5>
+            <p class="small text-secondary">
+              Chúng tôi chuyên cung cấp các sản phẩm phụ kiện, thiết bị công
+              nghệ chính hãng, uy tín hàng đầu toàn quốc.
+            </p>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-3">
+            <h5 class="text-uppercase fw-bold mb-3">Chính sách</h5>
+            <ul class="list-unstyled small text-secondary">
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Chính sách bảo hành</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Chính sách đổi trả 1-1</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-secondary"
+                  >Vận chuyển & Giao nhận</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-3">
+            <h5 class="text-uppercase fw-bold mb-3">Hỗ trợ</h5>
+            <ul class="list-unstyled small text-secondary">
+              <li class="mb-2">
+                <i class="bi bi-telephone me-2"></i>Hotline: 1900 xxxx
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-envelope me-2"></i>Email: support@techstore.com
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-geo-alt me-2"></i>Địa chỉ: Cầu Giấy, Hà Nội
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-3">
+            <h5 class="text-uppercase fw-bold mb-3">Kết nối với chúng tôi</h5>
+            <div class="d-flex gap-3 fs-4 mb-3">
+              <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-tiktok"></i></a>
+            </div>
+            <p class="small text-secondary">
+              &copy; 2026 TechStore. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
